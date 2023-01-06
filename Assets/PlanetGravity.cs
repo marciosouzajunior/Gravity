@@ -63,7 +63,7 @@ public class PlanetGravity : MonoBehaviour
 
         /*
          * Orbital Speed Equation
-         * An object’s orbital speed, v, is given by the equation v = ?GM / r.
+         * An object's orbital speed, v, is given by the equation v = ?GM / r.
          * Where G is the universal gravitational constant, m is the mass of the
          * large object at the center of the orbit, and r is the orbital radius.  
          * Reference: https://www.nagwa.com/en/explainers/142168516704/
