@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlanetGravity : MonoBehaviour
 {
 
-    public GameObject objAttract;
+    public GameObject objectToAttract;
     public bool orbit = false;
     public float G = 1f;
     private bool collided = false;
@@ -20,7 +20,7 @@ public class PlanetGravity : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (objAttract == null)
+        if (objectToAttract == null)
             return;
 
         if (collided)
@@ -35,16 +35,16 @@ public class PlanetGravity : MonoBehaviour
          * Reference: https://www.nagwa.com/en/explainers/765154391754/
          */
 
-        float objAttractMass = objAttract.GetComponent<Rigidbody>().mass;
+        float objAttractMass = objectToAttract.GetComponent<Rigidbody>().mass;
         float planetMass = GetComponent<Rigidbody>().mass;
-        float distance = Vector3.Distance(gameObject.transform.position, objAttract.transform.position);
+        float distance = Vector3.Distance(gameObject.transform.position, objectToAttract.transform.position);
         float force = G * (objAttractMass * planetMass) / (distance * distance);
 
         // Calculate direction
-        Vector3 direction = transform.position - objAttract.transform.position;
+        Vector3 direction = transform.position - objectToAttract.transform.position;
 
         // Apply force
-        objAttract.GetComponent<Rigidbody>().AddForce(direction.normalized * force);
+        objectToAttract.GetComponent<Rigidbody>().AddForce(direction.normalized * force);
 
         // Print direction
         // Debug.DrawRay(objAttract.transform.position, direction, Color.red);
@@ -55,7 +55,7 @@ public class PlanetGravity : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        collided = true;
+        //collided = true;
     }
 
     void Orbit()
@@ -70,10 +70,10 @@ public class PlanetGravity : MonoBehaviour
          */
 
         float planetMass = GetComponent<Rigidbody>().mass;
-        float distance = Vector3.Distance(objAttract.transform.position, transform.position);
-        objAttract.transform.LookAt(transform);
-        Vector3 velocity = objAttract.transform.right * Mathf.Sqrt(G * planetMass / distance);
-        objAttract.GetComponent<Rigidbody>().velocity = velocity;
+        float distance = Vector3.Distance(objectToAttract.transform.position, transform.position);
+        objectToAttract.transform.LookAt(transform);
+        Vector3 velocity = objectToAttract.transform.right * Mathf.Sqrt(G * planetMass / distance);
+        objectToAttract.GetComponent<Rigidbody>().velocity = velocity;
 
     }
 
