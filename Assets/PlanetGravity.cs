@@ -19,7 +19,7 @@ public class PlanetGravity : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+
         if (objAttract == null)
             return;
 
@@ -50,7 +50,7 @@ public class PlanetGravity : MonoBehaviour
         // Debug.DrawRay(objAttract.transform.position, direction, Color.red);
         // Print velocity
         // Debug.DrawRay(objAttract.transform.position, objAttract.GetComponent<Rigidbody>().velocity, Color.blue);
-        
+
     }
 
     private void OnCollisionEnter(Collision collision)

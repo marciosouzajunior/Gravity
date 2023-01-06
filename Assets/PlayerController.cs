@@ -15,6 +15,5 @@ public class PlayerController : MonoBehaviour
         float z = Input.GetAxis("Vertical");
         Vector3 movement = new Vector3(x, 0, z) * 10;
         transform.GetComponent<Rigidbody>().AddForce(movement);
-        //transform.Translate(movement * 10 * Time.deltaTime);
     }
 }
