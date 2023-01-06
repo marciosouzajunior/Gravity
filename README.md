@@ -6,16 +6,34 @@ This is a Unity project that simulates space gravity. It implements the followin
 
 Where F is the force due to gravity, between two masses (m1 and m2), which are a distance r apart and G is the gravitational constant.
 
-## Project Structure
+## How it works
 
-- **Objects**:
-  - *Player*: A cube that simulates a player in the space.
-  - *Planet1*: A sphere with lower mass. 
-  - *Planet2*:  A sphere with bigger mass.
-- **Scripts**:
-  - *PlayerController*: Used to control the player with keyboard arrows
-  - *PlanetGravity*: Script attached to planets to calculate the formula and move the player
+The PlanetGravity script must be attached to an object the will exert gravity force. Then set property "Object to Attrach" with the object to apply the force.
+
+## Orbit
+
+An object can be put in orbit by setting the property Orbity to true:
+
+![image](https://user-images.githubusercontent.com/3470856/211054555-db233816-58fa-492c-a545-6760a7e61324.png)
+
+In this case the following equation will be applyed to calculate the object velocity:
+
+![image](https://user-images.githubusercontent.com/3470856/211055254-bf1edb85-a72e-4de2-b229-2f2cb5c324c0.png)
+
+The direction of the object velocity always points along a tangent to its orbital path (blue line). And the planet gravity acts as a centripetal force (red line).
+
+![image](https://user-images.githubusercontent.com/3470856/211056695-fe0ad0dc-9165-4e7e-9270-5705ed137a53.png)
+
+The magnitude of the velocity does not change due to gravity, but the direction constantly changes because the gravitational force constantly redirects it along a circular path. At any point in the orbit, the directions of the two quantities always point at a right angle, or 90 degress,to each other.
 
 ## Demo
 
-https://user-images.githubusercontent.com/3470856/210441753-c04f5ca0-e114-4d5f-9e3f-b9fed09ce124.mp4
+![gif_animation_006](https://user-images.githubusercontent.com/3470856/211053144-12f50b07-6887-4067-9a7c-8d9408b26a0b.gif)
+
+## References
+
+* https://www.nagwa.com/en/explainers/765154391754/
+* https://www.nagwa.com/en/explainers/142168516704/
+* https://www.youtube.com/watch?v=Ouu3D_VHx9o
+* https://www.youtube.com/watch?v=kUXskc76ud8
+
